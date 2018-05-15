@@ -8,7 +8,18 @@
 
 
 <script>
-
+    function print(n) {
+       for(var i = 1;i <= n; i++){
+           for(k = 1; k <= n - i ; k++){
+               document.write("&nbsp;");
+           }
+           for(var j = 1; j <= i ; j++){
+               document.write(i + "&nbsp;");
+           }
+           document.write("<br>");
+       }
+   }
+   print(5);
 </script>
 </body>
 </html>

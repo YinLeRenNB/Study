@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    var today = new Date();
+    var year = today.getFullYear();
+    var a = year*1;
+    if((a%4 == 0) && (a%100 !=0) || (a%400 == 0)){
+        document.write('当天为'+ a +'处于闰年')
+    }else{
+        document.write('当天为'+ a +'不处于闰年')
+    };
+
+
+    /*  function getLeapYeat(year){
+          if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)){
+              return true;
+          }
+          return false;
+      }
+
+          var today = new Date();
+          var year = today.getFullYear();
+
+          document.write('现在是'+ year +'年' + (getLeapYeat(year) ? '是闰年' : '不是闰年'));
+  */
+</script>
+</body>
+</html>

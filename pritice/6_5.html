@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    function Merge(s1, s2) {
+            var a1 = s1.split('');
+            var a2 = s2.split('');
+            var str = '';
+            var m1 = a1;
+            var m2 = a2;
+            if(a1.length > a2.length){
+                m1 = a2;
+                m2 = a1;
+            }
+            for(var i = 0; i < m1.length ; i++){
+                str += m1[i] + '' + m2[i];
+            }
+            for(var j = 0; j < m2.length; j++){
+                str += m2[j];
+            }
+            return str;
+    }
+    document.write(Merge('123456','abc'));
+</script>
+</body>
+</html>

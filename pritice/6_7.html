@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    function fn(n){
+        var num = new Array(n);
+        var a1 = a2 = 1;
+        for(i = 3; i < n; i++){
+            sum = a1 + a2;
+            a1 = a2;
+            a2 = sum;
+        }
+        return num[i]
+    }
+    document.write(fn(20))
+
+
+
+
+</script>
+</body>
+</html>

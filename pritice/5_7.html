@@ -8,6 +8,29 @@
 
 
 <script>
+/*    function fn(n){
+        var a1 = 1, a2 = 1;
+        for(var i = 3; i <= n ; i++){
+            temp = a1 + a2;
+            a1 = a2 ;
+            a2 = temp;
+        }
+        return temp;
+    }
+    document.write(fn(5));*/         // 非递归
+
+
+
+    function fn2(n){
+        if(n == 1 || n == 2 ){
+            return 1;
+        }
+        return fn2(n-1) + fn2(n-2);
+    }
+    document.write(fn(5));            //  递归
+
+
+
 
 
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    var scores = new Array(7);
+    var sum = 0;
+    var num = 0;
+
+    for(var i =0; i < scores.length; i++){
+        scores[i] = parseFloat(prompt('请输入第'+ (i+1)+ '科成绩'));
+        sum += scores[i];
+    }
+    document.write('总成绩为：'+ sum + '<br>');
+    document.write('平均分为：'+ Math.round(sum / scores.length)+ '<p>');
+    document.write('小于60分的成绩为：');
+
+    for(var i = 0; i < scores.length; i++){
+        if(scores[i] < 60){
+            num++;
+            document.write(scores[i] + ',');
+        }
+    }
+
+
+</script>
+</body>
+</html>

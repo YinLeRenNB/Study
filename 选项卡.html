@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+         li{
+             list-style: none;
+         }
+        #container li{
+            float: left;
+            margin-right: 10px;
+            width: 100px;
+            background: #cccccc;
+            cursor: pointer;
+
+        }
+        #container ul{
+            height: 30px;
+            border-bottom: 1px solid;
+
+        }
+        #container{
+            border: 1px solid;
+            height: 300px;
+            width: 400px;
+            background: #f8f8ff;
+            margin: 200px auto;
+        }
+        #main{
+            line-height: 30px;
+            text-align: center;
+        }
+        #main .selected{
+            background: #000;
+            color: #fff;
+        }
+        #nav div{
+            display: none;
+        }
+        #nav .selected{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <ul id="main">
+            <li class="selected">html</li>
+            <li>css</li>
+            <li>javascript</li>
+        </ul>
+        <div id="nav">
+            <div class="selected">111</div>
+            <div>222</div>
+            <div>333</div>
+        </div>
+    </div>
+
+
+    <script>
+        var oContainer = document.getElementById('container');
+        var aLi = oContainer.getElementsByTagName('li');
+        var oNav = document.getElementById('nav');
+        var aDiv = oNav.getElementsByTagName('div');
+
+        for(var i = 0; i < aLi.length; i++){
+            aLi[i].index = i;
+            aLi[i].onclick = function () {
+                for(var i = 0; i < aLi.length; i++){
+                    aLi[i].className = '';
+                    aDiv[i].className = '';
+                }
+                this.className = 'selected';
+                aDiv[this.index].className = 'selected' ;
+            }
+        }
+
+    </script>
+</body>
+</html>

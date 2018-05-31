@@ -1,0 +1,105 @@
+<!--
+无缝/   1从左面出去后又从右面进来
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #container{
+            width: 320px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        #main li{
+            width: 100px;
+            height: 100px;
+            background: #000;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+            margin-right: 10px;
+        }
+        #main{
+            width: 440px;
+            position: absolute;
+        }
+        #left ,#right{
+            display: inline-block;
+            width: 40px;
+            height: 25px;
+            background: #cccccc;
+            text-align: center;
+        }
+        #direction{
+            left: 50%;
+            margin-left: -40px;
+            position: absolute;
+            bottom: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="main">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <div id="direction">
+        <span id="left">向左</span>
+        <span id="right">向右</span>
+    </div>
+</div>
+
+
+<script>
+    var oMain = document.getElementById('main');
+    var oLeft =  document.getElementById('left');
+    var oRight = document.getElementById('right');
+    var speed = -2;
+
+
+    oMain.innerHTML += oMain.innerHTML;
+    oMain.style.width = oMain.offsetWidth * 2 + 'px';
+
+    setInterval(function(){
+        oMain.style.left = oMain.offsetLeft + speed + 'px';
+        if(oMain.offsetLeft <= -oMain.offsetWidth/2){
+            oMain.style.left = 0;
+        }
+        if(oMain.offsetLeft > 0){
+            oMain.style.left = -oMain.offsetWidth/2 + 'px';
+        }
+    },50);
+
+    oLeft.onmouseover = oRight.onmouseover = function () {
+        if(oLeft == this){
+            speed = -2;
+        }else {
+            speed = 2;
+        }
+    }
+
+
+</script>
+</body>
+</html>

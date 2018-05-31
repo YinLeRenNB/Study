@@ -5,6 +5,31 @@
     <title>Title</title>
 </head>
 <body>
+<button id="btn">btn</button>
+<span id="span"></span>
 
+
+<script>
+    var num = 0;
+    var count = 0;
+    var oBtn = document.getElementById('btn');
+    var oSpan = document.getElementById('span');
+    oBtn.onclick = function () {
+         num++;
+         if(fn()){
+            count++
+        };
+         oSpan.innerHTML = count / num;
+    };
+    function fn() {
+        var arr = [];
+        for(var i = 1; i <= 3; i++){
+            arr.push(Math.floor(Math.random() * 9 + 1));
+        }
+    return arr.indexOf(8) > -1 ? true : false;
+    }
+
+
+</script>
 </body>
 </html>

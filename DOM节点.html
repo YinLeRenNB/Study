@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">
+    <div id="div2">div2</div>
+    <!--注释   (8)-->
+    <div id="div3">div3</div>
+</div>
+
+<script>
+    var oDiv1 = document.getElementById('div1');
+    var oDiv2 = document.getElementById('div2');
+    var oDiv3 = document.getElementById('div3');
+
+    //  取到第一个元素节点 (1)
+    function next(elem) {
+        do{
+            elem = elem.nextSibling;
+        }while( elem && elem.nodeType != 1);
+        return elem;
+    }
+
+
+    function first(elem) {
+        elem = elem.firstChild;
+        return elem && elem.nodeType == 1 ? elem : next(elem);
+    }
+    console.log(first(oDiv1));
+
+
+
+    //  创建一个div4
+
+    var oDiv4 = document.createElement('div');
+    oDiv4.innerHTML = 'div4';
+    //  插入到div3前面
+    oDiv1.insertBefore(oDiv4, oDiv3);
+    //  移除div2
+    oDiv1.removeChild(oDiv2)
+    //  替换子元素
+    oDiv1.replaceChild(oDiv2, oDiv3);
+
+
+</script>
+</body>
+</html>

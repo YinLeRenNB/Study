@@ -9,26 +9,7 @@
 	<script src="../../../jquery-1.12.4.js" type="text/javascript"></script>
 	<!--   引入jQuery的cookie插件 -->
 	<script src="js/jquery.cookie.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		//<![CDATA[
-		$(function(){
-			var $li =$("#skin li");
-			$li.click(function(){
-				switchSkin( this.id );
-			});
-			var cookie_skin = $.cookie( "MyCssSkin");
-			if (cookie_skin) {
-				switchSkin( cookie_skin );
-			}
-		});
-		function switchSkin(skinName){
-			$("#"+skinName).addClass("selected")                 //当前<li>元素选中
-					.siblings().removeClass("selected");  //去掉其它同辈<li>元素的选中
-			$("#cssfile").attr("href","css/"+ skinName +".css"); //设置不同皮肤
-			$.cookie( "MyCssSkin" ,  skinName , { path: '/', expires: 10 });
-		}
-		//]]>
-	</script>
+
 </head>
 <body>
 <ul id="skin">
@@ -52,5 +33,11 @@
 	</div>
 </div>
 <p>说明：本例需使用Firefox才能看到效果，chrome由于安全性限制不允许直接修改cookie</p>
+
+
+<script>
+
+
+</script>
 </body>
 </html>

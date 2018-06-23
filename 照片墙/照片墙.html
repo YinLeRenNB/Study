@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body,html{
+        height: 100%;
+    }
+    #container{
+        height: 100%;
+        background-image: url("img/bg.jpg");
+        position: relative;
+    }
+    .img-box{
+        height: 125px;
+        width: 125px;
+        border: 5px solid #ffffff;
+        position: absolute;
+        top: -135px;
+        left: -135px;
+        -webkit-transition: all 2s ease;
+    }
+    .img-box span{
+        background: #000;
+        width: 125px;
+        height: 125px;
+        display: block;
+        opacity: 0;
+    }
+</style>
+<body>
+
+    <div id="container">
+
+    </div>
+
+<script>
+    /*图片的预加载*/
+
+    var count = 0;
+
+    for(var i=0; i<24; i++){
+        var oImg = new Image();
+        oImg.onload = function () {
+            count++;
+            if(count == 48){
+                loadsuccess();
+            }
+        };
+        oImg.src = 'img/'+ (i+1) +'.jpg'
+    }
+
+    for(var j=0; j<24; j++){
+        var oImg = new Image();
+        oImg.onload = function () {
+            count++;
+            if(count == 48){
+                loadsuccess();
+            }
+        };
+        oImg.src = 'img/thumbs/'+(j + 1)+'.jpg'
+    }
+
+    var oContainer = document.getElementById('container')
+    var index = 0;
+    function loadsuccess() {
+        for(var i=0; i<4; i++){
+            for(var j=0; j<6; j++){
+                var oDiv = document.createElement('div');
+                oDiv.className = 'img-box';
+                oDiv.pos = {
+                    row: i,col: j
+                };
+                oDiv.innerHTML = '<span></span>';
+                oDiv.idx = index;
+                index++;
+                oDiv.style.background = 'url(img/thumbs/' + index + '.jpg)';
+                oDiv.onclick = fn;
+                oContainer.appendChild(oDiv);
+            }
+        }
+
+        var spaceX = (oContainer.offsetWidth - 135 * 6) / 7;
+        var spaceY = (oContainer.offsetHeight - 135 * 4) / 5;
+        var aImg = oContainer.getElementsByTagName('div');
+
+        for(var k = 0; k <24; k++){
+            var oImg = aImg[k];
+            oImg.style.left = (oImg.pos.col + 1) * spaceX + oImg.pos.col * 135 + "px";
+            oImg.style.top = (oImg.pos.row + 1 )* spaceY + oImg.pos.row * 135 + "px";
+            oImg.style.webkitTransform = 'rotate(' + (Math.random() * 40 - 20)+ 'deg)';
+            oImg.style.webkitTransitionDelay = (24 - k) * 100 +'ms';
+        }
+
+
+        var iTop =(oContainer.offsetHeight - 127*4)/2;
+        var iLeft =(oContainer.offsetWidth - 127*6)/2;
+        function fn(){
+            //点击时合上
+            for(var i=0; i<24; i++){
+                var oImg = aImg[i];
+                oImg.style.webkitTransitionDelay ="0ms";
+                oImg.style.border = '1px solid #fff';
+                oImg.style.left = oImg.pos.col*127 + iLeft+"px";
+                oImg.style.top = oImg.pos.row*127+iTop+"px";
+                oImg.style.WebkitTransform = 'rotate(0deg)';
+                var oSpan = oImg.getElementsByTagName('span')[0];
+                oSpan.style.opacity = 1;
+                var x = oImg.pos.col * -125;
+                var y = oImg.pos.row * -125;
+                oSpan.style.background = 'url(img/'+(this.idx+1)+'.jpg) '+x+'px '+y+'px'    ;
+
+
+
+            }
+        }
+
+
+
+
+
+    };
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

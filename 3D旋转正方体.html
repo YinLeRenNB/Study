@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body{
+            background: #000;
+            perspective: 800px;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #container  div{
+            height: 200px;
+            width: 200px;
+            background: rgba(255,255,255,0.4);
+            border-radius: 10px;
+            font-size: 50px;
+            text-align: center;
+            line-height: 200px;
+            position: absolute;
+            left: 0;             /*相对父元素的定位*/
+            top: 0;              /*相对父元素的定位*/
+        }
+        #container{
+            height: 200px;
+            width: 200px;
+            margin: 200px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: run 2s linear infinite;
+          /*  transform-origin: 0 45px;*/
+        }
+        @keyframes run {
+            0%{
+
+            }
+            100%{
+                transform: rotateY(360deg) rotateX(360deg) rotateZ(360deg);
+            }
+        }
+        #div1{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        #div2{
+            transform: translateZ(100px);
+        }
+        #div3{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        #div4{
+            transform: rotateY(180deg) translateZ(100px);
+        }
+        #div5{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        #div6{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="div1">1</div>
+        <div id="div2">2</div>
+        <div id="div3">3</div>
+        <div id="div4">4</div>
+        <div id="div5">5</div>
+        <div id="div6">6</div>
+    </div>
+
+</div>
+</body>
+</html>

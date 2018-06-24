@@ -34,6 +34,25 @@
         display: block;
         opacity: 0;
     }
+    #next,#prev{
+        height: 80px;
+        width: 40px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: none;
+    }
+    #next{
+        border-radius: 10px 0 10px 0;
+        right: 0;
+        background: #fff url(img/next.png) no-repeat center center;
+    }
+    #prev{
+        border-radius: 0 10px 0 10px;
+        left: 0;
+        background: #fff url(img/prev.png) no-repeat center center;
+    }
+
 </style>
 <body>
 
@@ -41,6 +60,8 @@
 
     </div>
 
+    <div id="next"></div>
+    <div id="prev"></div>
 <script>
     /*图片的预加载*/
 
@@ -84,6 +105,7 @@
                 oDiv.style.background = 'url(img/thumbs/' + index + '.jpg)';
                 oDiv.onclick = fn;
                 oContainer.appendChild(oDiv);
+
             }
         }
 
@@ -100,30 +122,69 @@
         }
 
 
-        var iTop =(oContainer.offsetHeight - 127*4)/2;
-        var iLeft =(oContainer.offsetWidth - 127*6)/2;
+        var spaceYY =(oContainer.offsetHeight - 127*4)/2;
+        var spaceXX =(oContainer.offsetWidth - 127*6)/2;
+        var flag = true;
+        var oPrev = document.getElementById('prev');
+        var oNext = document.getElementById('next');
+
         function fn(){
             //点击时合上
-            for(var i=0; i<24; i++){
-                var oImg = aImg[i];
-                oImg.style.webkitTransitionDelay ="0ms";
-                oImg.style.border = '1px solid #fff';
-                oImg.style.left = oImg.pos.col*127 + iLeft+"px";
-                oImg.style.top = oImg.pos.row*127+iTop+"px";
-                oImg.style.WebkitTransform = 'rotate(0deg)';
-                var oSpan = oImg.getElementsByTagName('span')[0];
-                oSpan.style.opacity = 1;
-                var x = oImg.pos.col * -125;
-                var y = oImg.pos.row * -125;
-                oSpan.style.background = 'url(img/'+(this.idx+1)+'.jpg) '+x+'px '+y+'px'    ;
-
-
-
+            if(flag){
+                for(var i=0; i<24; i++){
+                    var oImg = aImg[i];
+                    oImg.style.webkitTransitionDelay ="0ms";
+                    oImg.style.border = '1px solid #fff';
+                    oImg.style.left = oImg.pos.col*127 + spaceXX + "px";
+                    oImg.style.top = oImg.pos.row*127+ spaceYY + "px";
+                    oImg.style.WebkitTransform = 'rotate(0deg)';
+                    var oSpan = oImg.getElementsByTagName('span')[0];
+                    oSpan.style.opacity = 1;
+                    var x = oImg.pos.col * -125;
+                    var y = oImg.pos.row * -125;
+                    oSpan.style.background = 'url(img/'+(this.idx+1)+'.jpg) '+x+'px '+y+'px';
+                }
+                oPrev.style.display = 'block';
+                oNext.style.display = 'block';
+                number = this.idx;
+            }else{
+                for(var k = 0; k <24; k++){
+                    var oImg = aImg[k];
+                    oImg.style.left = (oImg.pos.col + 1) * spaceX + oImg.pos.col * 135 + "px";
+                    oImg.style.top = (oImg.pos.row + 1 )* spaceY + oImg.pos.row * 135 + "px";
+                    oImg.style.webkitTransform = 'rotate(' + (Math.random()*40 - 20)+ 'deg)';
+                    oImg.style.border = '5px solid white';
+                    var oSpan = oImg.getElementsByTagName('span')[0];
+                    oSpan.style.opacity = 0;
+                }
+                oPrev.style.display = 'none';
+                oNext.style.display = 'none';
             }
+            flag = !flag;
         }
 
+        var aSpan = oContainer.getElementsByTagName('span');
+        oNext.onclick = function () {
+            number++;
+            if(number == aSpan.length){
+                number = 0;
+            }
+            for(var i=0; i<aSpan.length; i++){
+                aSpan[i].style.webkitTransitionDelay = Math.random()*1000 + 'ms';
+                aSpan[i].style.backgroundImage = 'url(img/' + (number +1) + '.jpg)';
+            }
+        };
 
-
+        oPrev.onclick = function () {
+            number--;
+            if(number == -1){
+                number = aSpan.length - 1;
+            }
+            for(var i=0; i<aSpan.length; i++){
+                aSpan[i].style.webkitTransitionDelay = Math.random()*1000 + 'ms';
+                aSpan[i].style.backgroundImage = 'url(img/' + (number+1) + '.jpg)';
+            }
+        }
 
 
     };

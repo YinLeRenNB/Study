@@ -1,0 +1,11 @@
+#container{
+    width: 1002px;
+    position: relative;
+    margin: 0 auto;
+}
+#part-one{
+    margin: 0 auto;
+    position: absolute;
+    float: left;
+    background: #31333e;
+}

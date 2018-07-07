@@ -58,3 +58,42 @@ a{
     right: 0;
     margin-top: 45px;
 }
+.tip div{
+    position: absolute;
+    font-size: 30px;
+    color: #626262;
+}
+.wd{
+    margin-left: 94px;
+    margin-top: 546px;
+}
+.sm{
+    margin-left: 422px;
+    margin-top: 546px;
+}
+.ma{
+    margin-left: 761px;
+    margin-top: 546px;
+}
+.tip-imgs{
+    top: 590px;
+    position: absolute;
+}
+#font-one{
+    font-size: 15px;
+    position: absolute;
+    top: 731px;
+    left: 26px;
+}
+#font-two{
+    font-size: 15px;
+    position: absolute;
+    top: 731px;
+    left: 357px;
+}
+#font-three{
+    font-size: 15px;
+    position: absolute;
+    top: 731px;
+    left: 691px;
+}

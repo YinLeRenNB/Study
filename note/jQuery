@@ -1,0 +1,19 @@
+1.  onload 全部加载之后进行,重复写会进行覆盖
+2.  文档就绪函数(function(){})()   HTML加载完成进行,重复写不会进行覆盖
+3.  even双数   odd单数
+4.  attr返回第一次所匹配的属性
+5.  arrt含两个参数  (原来没有)表示为前面设置一个属性  (原来有)表示更改
+6.  html加标签可自行编译     text加标签不进行编译 直接加入
+7.  .toggleClass()  将没有标签的加上标签 有标签的取消标签
+8.  .hasClass  有返回true 没有返回flase
+9.  InnerHeight/Width  只包括Padding  不包括border
+10. OuterHeight/Width  包括Padding border  选择性包括(true)margin
+11. offsetParent 找到已经定位的父元素  如果没有返回 Html
+12. append 前父后子  appendTo 前子后父
+13. remove 删掉之后不保留事件    detach删除保留事件
+14. unwarp 删除所选元素的父元素
+15. extend 合并所有的对象 属性重复后面覆盖前面
+16. /n换行 /r回车
+17. prop() 返回或设置被选元素的属性和值
+18. val()  返回或设置被选元素的值
+19. attr() 返回或设置被选元素的属性

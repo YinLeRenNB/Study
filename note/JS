@@ -1,0 +1,109 @@
+1.  js定义变量 var     函数声明 function
+2.  js的数据类型
+  1)基本数据类型：number、string、boolean、undefined、null
+  2)引用数据类型：对象(object) ->everything is object
+3.  var a = 5;  // 数值 number
+    var b = 5.4; // 数值
+    var c = "abc"; // 字符串string
+    var d = ""; //空字符串
+    var e = true; //布尔boolean     true | false
+    var f; //未定义undefined
+    var g = null;
+3.  undefined是存在形式,表示变量不含有值    not defined是错误
+4.  true = 非0/非空字符串
+    false = 0/空字符串/undefined/null
+    不等号 !=        !==  <=> ===
+5.  +类型转换字符串   ==判断值是否相等   ===判断值以及类型是否相等
+6.  &&且    ||或    !非
+7.  $$前为false后面不进行运算    ||前为true后面不进行运算
+8.  空字符串相当于false    其余字符串(包括只有空格)相当于true
+9.  isNaN 测试是不是非数字
+10. 编程语言：c,c++,java 可独立运行
+    脚本语言：js 借助宿主环境
+11. switch不会将数据类型转换
+12. 尽量避免全局变量     局部变量只在{}中适用，若要反馈出需用return
+13. 函数声明及调用才会生效
+14. JS的函数是一个特殊的数据类型
+15. JS函数的写法
+    1）function aa(){
+  	alert('....');
+       }           //函数声明   ->会自动将function提前
+    2）var aa = function(){
+        alert('....');
+       }           //函数表达式     先声明再调用
+       aa();     （调用）
+16.  多个单词之间用_
+17.  JS中尽量用' '   HTML用" "
+18.  typeof undefined -> undefined    typeof null -> object
+
+
+对象
+1. 内置对象  math&date
+2. dom对象(JS特有对象)
+3. 自定义对象
+
+-----------------------------------------------------------------------------------------------------------------
+
+
+1.  function内部的 var a ->局部变量  a ->全局变量
+2.  window下自带 name属性,  console.log(window.name)  -> 空字符串
+                            console.log(window.xxxx)  -> undefined
+3.  5 / 0   ->  infinity
+4.  c++ 后自增   ++c先自增
+5.  switch 即比较值又比较类型
+6.  if 可通过自己进行调整
+7.  循环结构
+   1) for(var i = ; i<5; i++){
+        console.log(i)
+      }
+   2) var i = 0;
+      while(i < 5){
+        console.log(i);
+        i++;
+      }
+   3) var i = 0;
+     do{
+         console.log(i);
+                  i++;
+      }  while(i < 5);
+8.  所得结果只在函数内部使用不需要return  要在外部也使用需要return
+数组和对象
+9.  for(in) 循环对象,   取内容用 .     或者[]
+                        .取确定名称    []取变量
+10. 浅拷贝(两对象相互干扰)
+11. 深拷贝(两对象各自独立互不干扰)
+12. 函数的立即调用
+13. 计时器  setTimeOut(function(){},Time)     进行一次
+            setInterval(function(){},time)    重复进行
+
+
+1.  var arr3 = new Array(3)     ->长度为3的空数组
+    var arr3 = new Array('a')   ->长度为1,第一个值为a
+2.  pop()       删除并返回数组的最后一个元素
+    push()      像数组的末尾添加一个或更多的元素，并返回新的长度
+    shift()     删除并返回数组的第一个元素
+    unshift()   将数组的开头添加一个或更多元素，并返回新的长度
+    join()      用指定的分隔符进行元素的分割，默认为,
+    resverse()  颠倒数组中的元素顺序
+3.  typeof 数组 -> object
+4.  判断变量是否为数组
+     var arr = ['a', 'b', 'c'];
+       1)console.log(arr instanceof Array);
+       2)console.log(arr.constructor == Array);
+                     true ->数组     false->非数组
+
+
+
+
+
+
+
+1.  const 被定义后为常量(内存空间不能够被改变,其中的内容可以被改变)
+2.  进制转换  eg. 2进制转化16进制
+    parseInt(num,2).toString(16)      转化为10进制可不写toString(10)
+3.  JS中区分大小写
+4.  /n  换行
+5.  \对后面符号的转译 令其输出
+6.  x+=y    <=>    x = x+y
+7.  ceil 向上取整  floor 向下取整
+8.  break 跳出循环   continue 结束本次循环，开始下次循环

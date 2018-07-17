@@ -1,0 +1,29 @@
+1.  script如果写在head里需要加上  window.onload = function(){};
+2.  js代码写在body 和 head 中的区别
+写在body里 ：只等标签加载完成后执行
+写在head里 ：等标签以及标签中的内容后再执行
+   （head中速度要快于body中）
+3.  名字重复时  CSS选择器都能选中, JS选择器中只选中第一个
+4.  tagName返回的是大写字母
+5.  getElementsByTagName 返回的是一个集合（伪数组）
+6.  getElelmentsByCalssName  有兼容性问题 不支持I8  I6
+7.  document.documentElement     -->获取HTML
+8.  document.body    -->获取body
+9.  oncontextmenu  -->鼠标右键事件
+10. 事件三要素：事件源、事件处理函数、时间对象
+11. return flase   组织系统默认菜单
+12. 事件对象 e/ window.event   有兼容性问题
+解决方法  e = e || window.event
+13. this 在对象中，对于当前对象的引用
+14. 取对象的动态属性 用 []
+15. offset只能取值不能赋值  所取值不含单位
+16. rAF(requestAnimationFrame)  —>  windows下自带的做动画的函数
+17. raf性能高于定时器不需要自己设置时间, (刷新频率随着自身浏览器的刷新频率)
+    一般为 16.67ms
+18. .appendChild   通过JS在某父元素中(引用)追加子元素 并放在最后
+19. 复制追加 appendChile(xx.cloneNode())
+20. 元素节点为1  文本节点为3  注释节点为8
+21. 向xx中插入节点    xx.insertBefore(新节点, 某节点的前面)
+22. 替换节点   xx.replaceChild(newNode, oldNode);
+23. 移除节点   xx.removeChild( );
+

@@ -1,0 +1,35 @@
+1.  XHTML  可扩展的html
+2.  hyml注释  ctrl+/           /n 换行
+3.  html 网页的根标签root
+4.  <meta name="keywords" content="..">  网站被搜索到的关键字
+5.  <meta name="description" content="..">    网站搜索的简介
+6.  <target=“_blank”>  在新的选项卡里打开网站
+7.  ol 有序列表 里面必须有 li            ul 无序列表  里面必须有 li
+8.  img中 src 图片源头    alt 图片失败时所显示  title 鼠标停留所显示的标签
+9.  table表格  tr 行  td 列、
+10. p-段 自带边距16px   <p>不能嵌套块级元素标签
+    a点击标签跳转      自带下划线、颜色
+11.  表单标签（注册之类）  <form acton:"所进行的地址">
+12.  label 点击文字也能获取 input 的焦点
+                (1)<label for="...">用户名：</label>
+                     <input type=“text” id="...">
+                (2)  <label>
+                             用户名：  <input type="...">
+                       </label>
+13.  <br> 换行   <hr>横分割线    dashed 虚线     dotted点
+14.  radio 选择框(单选)   添加name 属性 相同名称属于同一类 只能选择一个
+          checkbox 选择框(多选)
+               <select>
+                        <option value=""></option>
+               </select>
+                              下拉条
+
+15.  id重复时CSS中会都选中
+16.  html注释 <!-- -->   css注释 /*   */       js注释 //
+17.  浏览器寻找代码时从右往左
+18.  *通配符,选择网页之中所有的元素
+19.  网页标题栏的图片格式  .ico    一般名字为favicon.ico
+20.  file-本地协议     locallhost/127.0.1.1-网络协议
+21.  浏览器默认字体大小16px  中文一般设计不小于12px
+22.  设置字体  font-famliy               字体粗细font-weight
+23.  空格 &nbsp;  小于号&lt;  大于号&gt;   乘号&times;

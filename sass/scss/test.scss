@@ -1,0 +1,92 @@
+$color:#f00;
+$a:'head';
+
+
+body{
+  background: $color;
+  width: 300px;
+  height: 300px;
+  color: $color;
+}
+
+.#{$a}{
+  width: 200px;
+  height: 200px;
+}
+.head-logo{
+  width: 10px;
+}
+
+.header{
+  width: 1210px;
+  margin: 0 auto;
+  .logo{
+    width: 100px;
+    height: 100px;
+    float: left;
+    a{
+      text-decoration: none;
+      &:hover{
+        color: $color;
+      }
+    }
+  }
+}
+
+
+@mixin boder($col){
+  border: 1px solid $col;
+  box-shadow: 2px 5px 3px 4px rgba(0,0,0,0.5);
+}
+
+.aa{
+  width: 200px;
+  height: 200px;
+  @include boder(red);
+}
+.bb {
+  width: 600px;
+  height: 50px;
+  @include boder(green);
+}
+
+@mixin css3($attr,$val){
+  -webkit-#{$attr}:$val;
+  -moz-#{$attr}:$val;
+  -o-#{$attr}:$val;
+  -ms-#{$attr}:$val;
+  #{$attr}:$val;
+}
+
+
+@mixin arrow($width,$col){
+  border-style: solid;
+  border-color: $col transparent transparent transparent;
+  border-width: $width;
+  width: 0;
+  height: 0;
+}
+
+.arrow{
+  @include arrow(50px,green);
+}
+
+@for $i from 1 through 5{
+  .item#{$i}{
+    width: 20px*$i;
+  }
+}
+
+$j:5;
+@while($j<10){
+  .a#{$j}{
+    width: 20*$j;
+  }
+  $j:$j+2;
+}
+
+$icon:error warn right;
+@each $val in $icon{
+
+}
+

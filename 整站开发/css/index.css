@@ -8,4 +8,65 @@
     position: absolute;
     float: left;
     background: #31333e;
+    width: 100%;
 }
+.tip div{
+    position: absolute;
+    top: 537px;
+    font-size: 30px;
+    color: #626262;
+    font-family: "PTSsna Regular";
+}
+
+.wd{
+    left: 90px;
+}
+.sm{
+    left: 412px;
+}
+.ma{
+    left: 745px;
+}
+.tip-imgs{
+    position: absolute;
+    top: 590px;
+    left: 0;
+}
+.small-font{
+    position: absolute;
+    top: 730px;
+}
+.rm a{
+    position: absolute;
+    top: 853px;
+    font-size: 15px;
+    font-family: "Myriad Pro Regular";
+    color: #11b3ff;
+    font-weight: bold;
+}
+.rm-one{
+    left: 115px;
+}
+.rm-two{
+    left: 455px;
+}
+.rm-three{
+    left: 795px;
+}
+#part-three{
+    position: absolute;
+    top: 952px;
+    background: #e2e7ed;
+    width: 100%;
+    height: 500px;
+}
+.pt-font{
+    font-size: 30px;
+    color: #626262;
+    position: absolute;
+    top: 30px;
+}
+
+
+
+

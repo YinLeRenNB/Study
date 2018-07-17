@@ -1,0 +1,20 @@
+1.  事件是可传递的,一层一层向父级传递
+2.  绑定事件方法：1) elem.onclick = function(e){}
+       (标准)     2) elem.addEventListener('type', fn(e), false/true)
+    阻止事件传播(冒泡+捕获)  e.stopPropagation()
+3.  true 事件捕获 从外向里
+4.  false 事件冒泡 从里向外
+5.  先捕获后冒泡
+6.  早期IE绑定事件方法 elem.attachEvent('ontype', fn)
+          (只支持冒泡,不接受捕获)
+    阻止事件传播  window.event.cancelBubble = true
+    attachEvent 顺序相反    this -> window
+7.  click事件比type事件慢300ms （等待是否为双击）
+8.  改变this的指向  1) fn.call(this指向, 参数个数用,间隔);
+                    2) fn.apply(this指向 , []);
+                    3）fn.bind(this指向, 参数个数用,间隔)();
+9.  事件委托(事件代理)：运用事件冒泡把子元素的事件委托给父元素
+10. e.target 事件源   IE中  window.event.srcElement
+11. 创建对象  document.creatElement('type');
+
+

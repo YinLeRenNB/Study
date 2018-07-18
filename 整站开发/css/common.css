@@ -24,8 +24,8 @@ a{
 .nav{
     float: left;
     position: relative;
-    margin-top: 50px;
-    margin-left: 98px;
+    top: 50px;
+    left: 98px;
 
 }
 .nav a{
@@ -57,4 +57,19 @@ a{
     position: absolute;
     right: 0;
     margin-top: 45px;
+    line-height: 30px;
+}
+.search{
+    position: absolute;
+    left: 11px;
+    font-size: 15px;
+    font-family: 'PTSans Italic';
+    font-style: italic;
+    color: #c7c8ca;
+}
+.search-img{
+    width: 13px;
+    height: 14px;
+    background: url(imgs/sprite.png) no-repeat -18px -18px; 
+    right: 11px;
 }

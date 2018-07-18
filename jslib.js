@@ -35,6 +35,3 @@ function getStyle(elem, attr){
         return getComputedStyle(elem, false)[attr];
     }
 }
-
-
-

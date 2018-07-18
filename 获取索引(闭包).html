@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+    
+    </style>
+</head>
+<body>
+    <ul>
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+        <li>ddd</li>
+    </ul>
+
+    <script>
+        var aLi = document.querySelectorAll('li');
+
+
+//非闭包
+    for(var i=0; i<aLi.length; i++){
+        
+        aLi[i].onclick = function(){
+            this.index = i;
+            console.log(this.index);
+        }
+
+    }
+
+
+
+
+/* 
+
+ //闭包
+        for(var i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                console.log(i)
+            }
+        }             // 输出值一直为4
+
+
+
+         for(var i=0; i<aLi.length; i++){
+
+            (function(idx){
+                aLi[i].onclick = function(){
+                    console.log(idx);
+                }
+
+            })(i);      //函数的立即调用
+        }  */ 
+
+
+//let
+        for(let i=0; i<aLi.length; i++){
+            aLi[i].onclick = function(){
+                console.log(i);
+            }
+        }                                            //  转换成ES5时会转换成闭包形式
+
+
+        
+
+
+        
+    
+    </script>
+    
+</body>
+</html>

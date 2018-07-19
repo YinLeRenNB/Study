@@ -1,0 +1,23 @@
+1.  HTML5 新增标签  (常用)
+    <article>  文章
+    <aside>    侧边栏
+    <audio>
+    <footer>  <header>  <time>
+2.  placeholder :  input下未输入时显示，输入后消失
+3.  离线缓存：  <html manifest:" xx ">    xx 推荐 xx.appcache
+4.  本地存储 document.cookie = 'name=zhangsan'
+expires + date    -> 过期时间
+5.  sesionStorage.name = ""   ->  sesion域  关闭浏览器就过期
+6.  localStorage.name = ""   -> 一直存在直至手动清除
+      setItem / getItem / removeItem / clear 所有的全部清掉
+
+
+cookie 与 sesionStorage localStorage 区别：
+
+1.  存储大小  cookie 4K
+             sesionStorage localStorage   >5M
+2.  过期时间/生命周期不同  cookie可以手动设置    
+                         sesionStorage   关闭浏览器就过期
+                         localStorage    一直存在至手动清除
+3.  cookie 所有同源的http中携带
+    

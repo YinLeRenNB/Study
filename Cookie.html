@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+    
+//cookie 本地存储
+
+        function setCookie(key,value,day){         //关键字,内容,过期时间
+            var str = key + '=' + value +';';
+            
+            if(day){  /* 是否传值，传值day为有效值  未传值为undefined */
+                var date = new Date();
+                date.setDate( date.getDate() + day );
+                str += 'expires=' + date;
+            }
+           
+        }
+            //输入时不填写过期日期时  默认为关闭就过期
+        
+        setCookie('xxx','lisi')
+        setCookie('name','zhangsan',25);
+        setCookie('bbb','aaa',25);
+
+        function getCookie(key){
+            var arr = document.cookie.split("; ");    /* 用; 来分割字符串   ["xxx=lisi","bbb=aaa","name=zhangsan"] */
+            
+            for(var i =0; i<arr.length; i++){
+
+                var arr2 = arr[i].split("=");     /* "xxx","lisi" */
+                if (key == arr2[0] ){
+                return arr2[1];
+                } 
+            }
+        }   
+        console.log( getCookie('name') );
+        console.log( getCookie('bbb') );
+
+
+        function removeCookie (key){
+            setCookie(key,"",-1);
+        }
+    
+
+   
+    </script>
+</body>
+</html>

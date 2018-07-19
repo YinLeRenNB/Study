@@ -12,5 +12,13 @@
         let [a,b,c] = arr;
 8.  模板字符串  ``反引号      `xxxxxxx${}xxxxxxxx`            字符串的拼接  支持标签、换行、数学运算
 9.  把方法向对象添加属性 使所有的对象都可以直接使用(共享这种方法)  foo.xx    String.prototype.xx = function(){};
+10. str.padStart(number,String) / padEnd()      ->number:扩展到一共几个  string:用什么str来进行扩展       start 从头开始  end 从后面开始
+11. isFinite 检测数字是否为有限数字
+12. Math.trunc ->去除一个数的小数部分 返回整数部分        Math.sign   ->正数返回1  0返回0  负数返回-1
 
 
+箭头函数
+
+1.  箭头函数：  函数中的 this 为执行时的this,   箭头函数中的this 声明时要到父作用域去找 
+2.  箭头函数不能用于构造函数
+3.  在箭头函数中不允许使用arguments  /  arguments用...rest 来代替

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <ul>
+
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+        <li>44</li>
+    </ul>
+    
+
+    <script>
+    
+       var aLi = document.querySelectorAll('li');
+
+        for(var i=0;  i<aLi.length; i++){
+
+            aLi[i].onclick = function(){
+                setTimeout(() => {                  //setTiomeout ->为了重复一次
+                    console.log(this)
+                },200)
+            }
+        }
+
+
+        var person = {
+            name:'zs',
+            age: 25,
+            say:() => {
+                console.log(this);    // ->返回值为 Window
+            }
+        }                               
+
+        person.say();                           //this遇到箭头函数就向父作用域找 
+
+
+
+
+        let aa = (...rest) => {           // 用 arguments 会报错    
+            console.log(rest);                          //输出形式为 []
+        }
+
+        aa(1,2,3,4);
+
+
+
+        
+        
+
+    
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

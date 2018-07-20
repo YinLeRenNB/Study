@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+    
+    
+    let obj = {
+        name:'zhangsan',
+        age:20
+    };
+
+    let pro = new Proxy(obj,{  
+        //获取监测值之前所做的事情    必须要return
+        get:(target, key, proxy) => {
+            console.log('get..')
+            console.log(target, key, proxy);
+            return target[key];
+        },
+        //改变监测值时所做的事情
+        set:(target,key,value,proxy) => {
+            console.log('set..');
+            console.log(target,key,value,proxy);
+            target[key] = value;     //将监测值的val改变
+        }
+    })
+
+    console.log(pro.name);            //输出get  zhangsan
+
+
+
+    pro.name = 'lisi';
+    console.log(obj.name);              //输出set  lisi
+    
+    
+    </script>
+</body>
+</html>

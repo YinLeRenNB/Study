@@ -1,0 +1,7 @@
+1.  响应式：格局不同的“尺寸”，显示不同的CSS界面。
+2.  响应式优点：提高用户体验
+3.  响应式缺点：兼容性代码多，工作量大，加载速度会受到影响。
+4.  多行文本垂直居中  父元素--display: table    子元素--display: table-cell    vertical-align: middle
+5.  background-size: 100% 图片充满  ->等比缩小 等比放大
+6.  height: 56vw;    vw  -> view width  视口(浏览器)宽度占比   wh -> view height 视口高度占比
+7.  padding-top : %   父元素宽度的百分比

@@ -43,8 +43,8 @@ a{
     height: 14px;
     position: absolute;
     right: 0;
-    top:50%;
-    margin-top:-7px;
+    /* top:50%; */
+    top:3px;
     background: #6b6b6b;
 }
 #contact::after{
@@ -56,11 +56,12 @@ a{
     background: #f1f3f6;
     position: absolute;
     right: 0;
-    margin-top: 45px;
+    top: 45px;
     line-height: 30px;
 }
 .search{
     position: absolute;
+    top: 0;
     left: 11px;
     font-size: 15px;
     font-family: 'PTSans Italic';

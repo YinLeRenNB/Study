@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("console.log(\"asjkgfaskjgfaukjbfhadukj\");\n\n//# sourceURL=webpack:///./src/index2.js?");
+eval("console.log(\"asjkgfaskjgfaukjbfhadukj\");\r\ndocument.write('dasajin');\n\n//# sourceURL=webpack:///./src/index2.js?");
 
 /***/ })
 

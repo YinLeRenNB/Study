@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("let str = \"safadfsbs\";\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("let str = \"safadfsbs\";\r\ndocument.write('scnhajgfasdguvhiaejvgiuoagf uiakhgeuighkfiughisfuybfd打法按时发送发阿道夫');\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

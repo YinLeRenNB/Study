@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #header{
+            text-align: center;
+            border-bottom: 1px solid #ccc;            
+        }
+        #container{
+            left: 400px;
+            position: relative;
+            margin-top: 100px;
+            width: 500px;
+        }
+        #title{
+            margin-top: 2px;
+        }
+        .add,.search{
+            background: #fff;
+        }
+        #content div{
+            height: 50px;
+            background: #ccc;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .options{
+            width: 15px;
+            margin-left: 10px;
+            height: 15px;      
+        }
+        .div1{
+            line-height: 50px;
+        }
+
+        
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <h1>todolist</h1>
+    </div>
+
+    <div id="title">
+        名称:<input type="text" placeholder="请输入产品名称">
+        价格:<input type="text" placeholder="0">
+        <button class="add">增加</button>   
+    </div>
+    <div>
+        <input type="text" placeholder="请输入搜索关键字">
+        <button class="search">查询</button>
+    </div>
+
+    <div id="content">
+        <div class="div1">
+            <input type="checkbox" name="goods" class="options"></input>
+            <span id></span>
+        </div>
+     
+    </div>
+    <div id="footer">
+        <button>删除选中</button>
+        总价：
+    </div>        
+</div>
+
+<script>
+
+    event.preventDefault();
+</script>
+
+
+   
+</body>
+</html>
+

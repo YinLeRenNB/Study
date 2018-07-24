@@ -1,0 +1,4 @@
+1.  webpack 自动化的工具
+2.  template->要打包的html文件名    chunks->要引入的JS   filename ->生成的文件名   (在 plugins:[]中)
+3.  引入css  在JS中引入  语法： import css from '路径'
+4.  

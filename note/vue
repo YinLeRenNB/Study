@@ -3,9 +3,22 @@
 3.  {{}}  可用  <xx v-text=""> / <xx v-html="">
 4.  绑事件 <xx v-on:click = "fn();">   方法写在JS中 methods:{  fn(){}  }
 5.  v-on: 可简写成@
-6.  v-model 双向绑定   只针对于表单类元素  当
-    类似于 name    单选框-> v-model 相同
+6.  v-model 双向绑定   只针对于表单类元素    类似于 name    单选框-> v-model 相同
 7.  v-bind 绑定属性
 8.  {{}}写在内容中    
 9.  v-if=""    v-if-else=""    v-else=""
 10. 在methods中访问data中的 必须用this.
+11. filter ->过滤信息 (搜索时使用)
+12. 在vue中 通过中括号改变数组中索引相对的值不好使  要用 this.arr.splice() / Vue.set(数组,索引,改变值)
+13. 对象添加属性不好使, 修改属性好使    -> this.obj.=" ";
+14. computed:  (与 data methods 一个级别)     ->计算属性    可以缓存,值未发生变化用原来的值   (字符串拼接类)
+15. template  将data里面的两个元素分别循环到两个不同的标签中       -> div换成 template, 页面中一般不会显示template标签
+16. component 封装可重用的代码 Vue.component(组件名称,{}) 调用方法：  <组件名称></组件名称>
+17. 组件写在Vue.component 中为全局,  写在new Vue中 为局部
+
+18. 调用组件时    *************props:[]父组件到子组件传值    用法  {{xxx}}
+19. slot标签  如果有传值则显示传值    没有传值就显示默认值 可以不写默认值
+20. text/x-component 的根元素只能有一个
+
+21. **********子向父传值    子：  @click="$emit('xxx', ' ' )"   父： @xxx="fn"     -> fn写在 methods中   fn(val){}
+22. 生命周期 一共分8个阶段

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <button @click="change()">click</button>
+
+        <ul>
+            <li v-for="val in list">{{val}}</li>
+        </ul>
+        <div v-for="(val,key) in obj">{{key}} : {{val}}</div>
+    </div>
+
+
+    <script>
+    new Vue({
+        el:'#app',
+        data:{
+            list:[1,2,3,4,5,6],
+            obj:{
+                name:"zs"
+            }
+        },
+        methods:{
+            change(){
+                //  数组
+                
+                // this.list.splice(1,1,9);
+                Vue.set(this.list,1,80)
+
+                //  对象
+                
+                this.obj.name = "schiaofjcdioysihlj"
+                Vue.set(this.obj,'age',205)
+            }
+        }
+    })
+    </script>
+
+
+
+
+
+
+</body>
+</html>

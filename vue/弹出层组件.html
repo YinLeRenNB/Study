@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .dialog{
+        width: 400px;
+        height: 400px;
+        background: #cccccc;
+        border:1px solid #000;
+    }
+    .title{
+        height: 30px;
+        line-height: 30px;
+        border-bottom: 1px solid #000;
+        text-align: center;
+    }
+    .close{
+        float:right;
+        padding-right: 10px;
+        cursor: pointer;
+    }
+
+
+</style>
+<body>
+    <div id="app">
+        <button @click="showRegister=true;showLogin=false">注册</button>
+        <button @click="showRegister=false;showLogin=true">登陆</button>
+        <!-- 登录弹出层 -->
+        <my-dialog v-if="showLogin" title="登陆">
+            用户名：<input type="text"></br>
+            密码：<input type="text"></br>
+            <button>登陆</button>
+        </my-dialog>
+        <!-- 注册弹出层 -->
+        <my-dialog v-if="showRegister" title="注册">
+            用户名：<input type="text"></br>
+            密码：<input type="text"></br>
+            确认密码：<input type="text"></br>
+            <button>注册</button>
+        </my-dialog>        
+    </div>
+
+    <script type="text/x-template" id="temp">
+        <div class="dialog">
+            <div class="title">
+                <span class="header">{{title}}</span>
+                <span class="close" @click="$emit(close,'fn')">X</span>
+            </div>
+
+            <div class="content">
+                <slot></slot>
+            </div>
+            
+        </div>
+    </script>
+
+    <script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            showLogin:false,
+            showRegister:false
+        },
+        components:{
+            myDialog:{
+                template:"#temp",
+                props:['title']
+            }
+        },
+        methods:{
+            fn(val){
+                
+            }
+        }
+    })
+
+    
+    </script>
+
+
+</body>
+</html>

@@ -3,7 +3,9 @@
 3.  {{}}  可用  <xx v-text=""> / <xx v-html="">
 4.  绑事件 <xx v-on:click = "fn();">   方法写在JS中 methods:{  fn(){}  }
 5.  v-on: 可简写成@
-6.  v-model 表单输出类 双向绑定
+6.  v-model 双向绑定   只针对于表单类元素  当
+    类似于 name    单选框-> v-model 相同
 7.  v-bind 绑定属性
 8.  {{}}写在内容中    
 9.  v-if=""    v-if-else=""    v-else=""
+10. 在methods中访问data中的 必须用this.

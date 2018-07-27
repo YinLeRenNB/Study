@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #header{
+            text-align: center;
+            /* border-bottom: 2px solid #ccc;   */          
+        }
+        #container{
+            left: 400px;
+            position: relative;
+            margin-top: 100px;
+            width: 500px;
+        }
+        #title{
+            margin-top: 2px;
+        }
+        .add,.search{
+            background: #fff;
+        }
+
+        .div1{
+            line-height: 50px;
+        }
+        .price,.close{
+            float:right;
+        }
+        .close{
+            margin-left:10px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .selected{
+            background:#f00;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            height: 50px;
+            line-height: 50px;
+            background: #cccccc;
+            padding: 0 10px;
+            margin: 10px 0
+        }
+
+        
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <h1>todolist</h1>
+        <hr>
+    </div>
+
+    <div id="title">
+        <label for="proName">名称:</label>
+        <input type="text" id="proName" placeholder="请输入产品名称">
+        <label for="proPrice">价格:</label>
+        <input type="text" id="proPrice" placeholder="请输入产品价格">
+        <button class="add">增加</button>   
+    </div>
+    <div>
+        <input type="text" class="search-val" placeholder="请输入搜索关键字">
+        <button id="search">查询</button>
+    </div>
+
+    <ul id="pro">
+     <!--    <li>
+            <input type="checkbox">
+            <span>衣服</span>
+            <span class="close">[X]</span>
+            <span class="price">123</span>
+        </li> -->
+
+    </ul>
+    <div id="footer">
+        <button id="del">删除选中</button>
+        总价：<span class="total-price">0</span>
+    </div>        
+</div>
+
+<script>
+    let proList = [
+        {
+            name:"衣服",
+            price:123
+        },{
+            name:"裤子",
+            price:564
+        },{
+            name:"鞋",
+            price:1299
+        },{
+            name:"iphoneX",
+            price:8888
+        },{
+            name:"电脑",
+            price:5600
+        }
+    ];
+    /*  初始化 商品列表*/
+    for(var i=0; i<proList.length; i++){
+        var html =  `<li>
+                <input type="checkbox">
+                <span>${proList[i].name}</span>
+                <span class="close">[X]</span>
+                <span class="price">${proList[i].price}</span>
+            </li>`;
+
+            $('ul').append(html);
+    };
+ 
+
+    $('ul').on('click','li',function(){
+        if($(this).hasClass('selected')){
+            $(this).removeClass('selected').find('input').prop('checked',false);
+        }else{
+            $(this).addClass('selected').find('input').prop('checked',true);
+        }
+        total();
+    })
+    $('.add').on('click',function(){
+        proList.push({
+            name:$('#proName').val(),
+            price:$('#proPrice').val()
+        })
+
+        // 存在后生成元素无法绑定事件
+        var html =  `<li>
+                <input type="checkbox">
+                <span>${$('#proName').val()}</span>
+                <span class="close">[X]</span>
+                <span class="price">${$('#proPrice').val()}</span>
+            </li>`;
+            $('ul').append(html);
+    })
+
+    $('#del').on('click',function(){
+        //删除数组中的商品 
+        $checked = $('input:checked');
+        //循环所有被选中的数组   -> 从后循环避免删除前面项导致数组索引的改变
+        for(var i=$checked.length-1; i>=0; i--){
+            //从后往前 找到第一个被选中元素的索引
+            var index = $checked.eq(i).index('input:checkbox');
+            //删除数组中索引对应的元素
+            proList.splice(index,1);
+
+            //删除页面中的元素
+            $('li').eq(index).remove();
+            total();
+        }
+       /*  console.log(proList) */
+    });
+
+    $('#search').on('click',function(){
+        var val = $('.search-val').val();
+        $('li:contains('+val+')')
+        .show().siblings().hide();
+        total();
+    });
+
+ 
+    $('.close').on('click',function(){
+        $('#pro li').each(function(index){
+        //    var idx = $(this).index();  //当前索引值
+        $('li').eq($(this).index()).remove();
+        total();
+        })
+    })
+
+
+    //价格计算
+    function total(){
+        var count = 0;
+        $(':visible:checked').each(function(){          //:visible  只有可见的元素进行计算
+            count += $(this).siblings('.price').html()*1
+        })
+        $('.total-price').html(count);
+    }
+
+
+</script>
+
+
+   
+</body>
+</html>

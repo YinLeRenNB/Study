@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            #header{
+                text-align: center;
+            }
+            #container{
+                left: 400px;
+                position: relative;
+                margin-top: 100px;
+                width: 500px;
+            }
+            #title{
+                margin-top: 2px;
+            }
+            .add,.search{
+                background: #fff;
+            }
+    
+            .div1{
+                line-height: 50px;
+            }
+            .price,.close{
+                float:right;
+            }
+            .close{
+                margin-left:10px;
+                color: #fff;
+                cursor: pointer;
+            }
+            .selected{
+                background:#f00;
+            }
+            ul{
+                list-style: none;
+            }
+            li{
+                height: 50px;
+                line-height: 50px;
+                background: #cccccc;
+                padding: 0 10px;
+                margin: 10px 0
+            }
+    
+            
+        </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>todolist</h1>
+            <hr>
+        </div>
+    
+        <div id="title">
+            <label for="proName">名称:</label>
+            <input type="text" id="proName" placeholder="请输入产品名称" v-model="name">
+            <label for="proPrice">价格:</label>
+            <input type="text" id="proPrice" placeholder="请输入产品价格" v-model="price">
+            <button class="add" @click="add()">增加</button>   
+        </div>
+        <div>
+            <input type="text" class="search-val" placeholder="请输入搜索关键字">
+            <button id="search">查询</button>
+        </div>
+    
+        <ul>
+            <li v-for="(product,index) in proList" @click="change(product,index)" :class="{selected:product.isSelected}">
+                <input type="checkbox" v-model="checke" :valua="index">
+                <span>{{product.name}}</span>
+                <span class="close">[X]</span>
+                <span class="price">{{product.price}}</span>
+            </li> 
+    
+        </ul>
+        <div id="footer">
+            <button id="del">删除选中</button>
+            总价：<span class="total-price">{{sum()}}</span>
+        </div>        
+    </div>
+
+    
+    <script>
+        new Vue({
+            el:'#container',
+            data:{
+                proList : [
+                {
+                    name:"衣服",
+                    price:123,
+                    isSelected:false
+                },{
+                    name:"裤子",
+                    price:564,
+                    isSelected:false
+                },{
+                    name:"鞋",
+                    price:1299,
+                    isSelected:false
+                },{
+                    name:"iphoneX",
+                    price:8888,
+                    isSelected:false
+                },{
+                    name:"电脑",
+                    price:5600,
+                    isSelected:false       
+                }
+            ],
+            name:'',
+            price:'',
+                },
+            methods:{
+                change(product){
+
+
+                    product.isSelected = !product.isSelected;
+                },
+                add(){
+                    this.proList.push({
+                        name:this.name,
+                        price:this.price,
+                        isSelected:false
+                    });
+                    this.name = "";
+                    this.price = "";
+                },
+                sum(){
+                    var totalPrice = 0;
+                    this.proList.forEach(function(pro){
+                        if(pro.isSelected){
+                            totalPrice += pro.price;
+                        }
+                    });
+                    return totalPrice;
+                }
+
+
+
+            }
+        })
+
+    
+    </script>
+</body>
+</html>

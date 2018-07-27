@@ -71,20 +71,19 @@
         </div>
         <div>
             <input type="text" class="search-val" placeholder="请输入搜索关键字">
-            <button id="search">查询</button>
+            <button id="search" @click="search">查询</button>
         </div>
     
         <ul>
-            <li v-for="(product,index) in proList" @click="change(product,index)" :class="{selected:product.isSelected}">
-                <input type="checkbox" v-model="checke" :valua="index">
+            <li v-for="(product,index) in proList" @click= "change(product,index)" :class="{selected:product.isSelect}">
+                <input type="checkbox" v-model="checke" :value="index">
                 <span>{{product.name}}</span>
                 <span class="close">[X]</span>
                 <span class="price">{{product.price}}</span>
-            </li> 
-    
+            </li>
         </ul>
         <div id="footer">
-            <button id="del">删除选中</button>
+            <button id="del" @click="del()">删除选中</button>
             总价：<span class="total-price">{{sum()}}</span>
         </div>        
     </div>
@@ -119,32 +118,48 @@
             ],
             name:'',
             price:'',
+            checke:[]
                 },
             methods:{
-                change(product){
-
-
-                    product.isSelected = !product.isSelected;
+                change(product,idx){
+                    if(product.isSelect){//当前红色  再次点击需要从数组移除(复选框的选中)
+                        this.checke.splice(this.checke.indexOf(idx),1);
+                    }else{//当前灰色 需要push到数组 (选中复选框)
+                        this.checke.push(idx);
+                    }
+                    product.isSelect = !product.isSelect;
                 },
                 add(){
                     this.proList.push({
                         name:this.name,
                         price:this.price,
-                        isSelected:false
+                        isSelect:false
                     });
                     this.name = "";
                     this.price = "";
                 },
                 sum(){
                     var totalPrice = 0;
-                    this.proList.forEach(function(pro){
-                        if(pro.isSelected){
-                            totalPrice += pro.price;
+                    this.proList.forEach(function(pro,idx){
+                        if(pro.isSelect){
+                            totalPrice += pro.price*1;
                         }
                     });
                     return totalPrice;
+                },
+                del(){
+                    let newPro = this.proList.filter(function(product){
+                        return (product.isSelect != true);
+                    });
+                    this.proList = newPro;
+                    this.checke = [];    //删除之后重置数组  防止删除前面的导致后面的复选框被选中
+                },
+                search(){
+                    let newPro = this.proList.filter((product) => {
+                        return product.name.includes(this.searchVal);
+                    });
+                    this.proList = newPro;
                 }
-
 
 
             }

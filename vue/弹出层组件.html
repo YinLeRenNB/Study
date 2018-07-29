@@ -54,8 +54,8 @@
     <script type="text/x-template" id="temp">
         <div class="dialog">
             <div class="title">
-                <span class="header">{{title}}</span>
-                <span class="close" @click="$emit(close,'fn')">X</span>
+                <span class="header" @click="$emit('close','fn')">{{title}}</span>
+                <span class="close" @click="$emit('close','fn')">X</span>
             </div>
 
             <div class="content">
@@ -70,7 +70,8 @@
         el:"#app",
         data:{
             showLogin:false,
-            showRegister:false
+            showRegister:false,
+            msg:''
         },
         components:{
             myDialog:{
@@ -80,7 +81,8 @@
         },
         methods:{
             fn(val){
-                
+                console.log(val);
+                this.msg = val;
             }
         }
     })

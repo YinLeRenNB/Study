@@ -77,7 +77,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "http://localhost:8080/";
 /******/
 /******/
 /******/ 	// Load entry module and return exports
@@ -91,9 +91,10 @@
   !*** ./src/index2.js ***!
   \***********************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("console.log(\"asjkgfaskjgfaukjbfhadukj\");\r\ndocument.write('dasajin');\n\n//# sourceURL=webpack:///./src/index2.js?");
+"use strict";
+eval("\n\nconsole.log(\"asjkgfaskjgfaukjbfhadukj\");\ndocument.write('dasajin');\n\n//# sourceURL=webpack:///./src/index2.js?");
 
 /***/ })
 

@@ -26,7 +26,6 @@
 }
 #part-two{
     position: relative;
-    
 }
 .wd{
     left: 90px;
@@ -83,12 +82,12 @@
     display: inline-block;
     font-size: 30px;
     color: #626262;
-    /* position: absolute; */
+    position: absolute;
     top: 30px;
     margin: 0 auto;
 }
 .pt-img{
-    position: relative;
+    position: absolute; 
    
 }
 .img4{

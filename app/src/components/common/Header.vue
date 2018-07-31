@@ -1,0 +1,39 @@
+<template>
+    <div>
+        <div class="header" :style="{'background':bg}">
+            <span class="header-home">首页</span>
+            <span class="header-titlename">{{title}}</span>
+            <span class="header-none"></span>
+        </div>
+    </div>
+</template>
+
+<script>
+    export default {
+        props:['title','bg']
+    }
+</script>
+
+<style scoped>
+.header{
+    height: 1rem;
+    line-height: 1rem;
+    display: flex;
+}
+.header-home,.header-none{
+    color:#fff;
+    font-size: 0.3rem;
+    width: 1rem;
+    text-indent: 0.2rem
+}
+.header-titlename{
+    text-align: center;
+    color: #fff;
+    font-size: 0.5rem;
+    flex-grow: 1;
+    font-weight: bold;
+    
+}
+
+
+</style>

@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import MovieList from '@/components/movie/MovieList'
 import MusicList from '@/components/music/MusicList'
 import BookList from '@/components/book/BookList'
-import ImagesList from '@/components/images/ImagesList'
+import AnimeList from '@/components/anime/AnimeList'
 
 
 Vue.use(Router)
@@ -21,8 +21,8 @@ export default new Router({
       path: '/book/booklist',
       component: BookList
     },{
-      path: '/images/iamgeslist',
-      component: ImagesList
+      path: '/anime/animelist',
+      component: AnimeList
     }
   ]
 })

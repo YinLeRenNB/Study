@@ -16,6 +16,9 @@
 
 <style scoped>
 .header{
+    position: fixed;
+    top:0px;
+    width: 100%;
     height: 1rem;
     line-height: 1rem;
     display: flex;

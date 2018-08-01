@@ -3,8 +3,8 @@
         <ul class="footer" :style="{'background':bg}">
             <li @click="$emit('change','#9fee8b','Movie')"><router-link to="/movie/movielist">电影</router-link></li>
             <li @click="$emit('change','rgb(38, 189, 216)','Music')"><router-link to="/music/musiclist">音乐</router-link></li>
-            <li @click="$emit('change','#fccbaf','Book')"><router-link to="/book/booklist">书籍</router-link></li>
-            <li @click="$emit('change','#e7cd57','Images')"><router-link to="/images/iamgeslist">图片</router-link></li>
+            <li @click="$emit('change','#e7cd57','Book')"><router-link to="/book/booklist">书籍</router-link></li>
+            <li @click="$emit('change','#fccbaf','Anime')"><router-link to="/anime/animelist">动漫</router-link></li>
         </ul>
     </div>
 </template>

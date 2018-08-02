@@ -1,7 +1,7 @@
 <template>
     <div>
         <ul>
-             <li class="movieList" v-for="(obj,index) in movieList" :key="index">
+             <li class="movieList" v-for="(obj,index) in movieList" :key="index" @click="toDetail(obj.id)">
                 <div class="movie-img">
                     <img :src="obj.img" alt="">
                 </div>
@@ -41,7 +41,9 @@
                     console.log('获取数据失败');
                 });
                     this.isShow = false;
-                
+            },
+            toDetail(id){
+                this.$router.push(`/movie/moviedetail/${id}`);
             }
        },
        created() {

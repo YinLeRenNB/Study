@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="header" :style="{'background':bg}">
-            <span class="header-home">首页</span>
+            <span class="header-home" @click="home()">首页</span>
             <span class="header-titlename">{{title}}</span>
             <span class="header-none"></span>
         </div>
@@ -9,9 +9,16 @@
 </template>
 
 <script>
+    // import axios from 'axios'
     export default {
-        props:['title','bg']
+        props:['title','bg'],
+        methods: {
+            home(){
+                this.$router.push('/')
+            }
+        }
     }
+    
 </script>
 
 <style scoped>

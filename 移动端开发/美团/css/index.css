@@ -3,6 +3,7 @@
     height: 1.01rem;
     background: #06c1ae;
 }
+
 .header-left{
     width: 1.67rem;
     height: 1.01rem;
@@ -54,28 +55,60 @@
 input::-webkit-input-placeholder{  /* Internet Explorer 10-11 */ 
     color:#3efad8;
 }
+.content{
+    background: #fff;
+}
 .img-box{
     width: 6.4rem;
     height: 1.88rem;
+    border-bottom: 1px #ccc solid
 }
 .icon-iconlist{
     font-size: 0.7rem;
     text-align: center;
     margin-left: .27rem;
+    
 }
 .iconlist li{
+    background: #fff;
     float: left;
     width: 20%;
+    padding-bottom: .15rem;
 }
 .food{
     color: #efb336;
 }
 .movie{
+    color: #f00;
+}
+.hotel{
+    color: rgb(150, 31, 160)
+}
+.play{
+    color: #fed030;
+}
+.eat{
+    color: #efb336;
+}
+.ktv{
+    color: #fed030
+}
+.water{
+    color: #4dc6ee;
+}
+.beauty{
+    color: #ff80c2
+}
+.fasteat{
+    color: #efb336;
+}
+.train{
+    color: #4dc6ee;
 }
 .icon-text{
     display: block;
     text-align: center;
     font-size: .24rem;
     color: #666;
-    margin-top:.05rem 
+    padding-top:.05rem   
 }

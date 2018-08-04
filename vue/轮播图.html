@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        .img-box img{
-            width:100%;
-            height:300px;   
+
+        .img-box img {
+            width: 100%;
+            height: 300px;
             display: none;
         }
-        .img-box img.selected{
+
+        .img-box img.selected {
             display: block;
         }
-        #container{
+
+        #container {
             position: relative;
         }
-        .btn-box{
+
+        .btn-box {
             position: absolute;
             right: 30px;
-            bottom:20px;
+            bottom: 20px;
             list-style: none;
         }
-        .btn-box li{
+
+        .btn-box li {
             float: left;
             width: 20px;
             height: 20px;
@@ -36,16 +42,31 @@
             line-height: 20px;
             margin-right: 5px;
         }
-        .btn-box li.selected{
-            background:orange;
-        }
 
+        .btn-box li.selected {
+            background: orange;
+        }
+        .slide-leave-active{
+            transform: opacity 2s
+        }
+        .slide-leave-to{
+            opacity: 0;
+        }
+        .slide-enter-active{
+            transform: opacity 2s
+        }
+        .slide-enter-to{
+            opacity: 1;
+        }
     </style>
 </head>
+
 <body>
-    <div id="container" >
+    <div id="container">
         <div class="img-box">
-            <img :class="{selected:index == nowIndex}" v-for="(img,index) in imgs" :src="img" alt="">
+            <transition-ground name="slide" tag="div">
+                <img :class="{selected:index == nowIndex}" v-for="(img,index) in imgs" :src="img" alt="">
+            </transition-ground>
         </div>
         <ul class="btn-box">
             <li v-for="(x,index) in imgs.length" :class="{selected:index==nowIndex}" @click="change(index)">{{x}}</li>
@@ -54,35 +75,32 @@
     <script src="vue.js"></script>
     <script>
         new Vue({
-            el:'#container',
-            data:{
-                imgs:[
+            el: '#container',
+            data: {
+                imgs: [
                     "https://img3.doubanio.com/lpic/s24468373.jpg",
                     "https://img3.doubanio.com/lpic/s27102925.jpg",
                     "https://img3.doubanio.com/lpic/s6989253.jpg"
                 ],
-                nowIndex:0
+                nowIndex: 0
             },
             methods: {
-                change(index){
+                change(index) {
                     this.nowIndex = index;
                 }
             },
-            created () {
+            created() {
                 setInterval(() => {
                     this.nowIndex++;
-                    if(this.nowIndex == this.imgs.length){
+                    if (this.nowIndex == this.imgs.length) {
                         this.nowIndex = 0;
                     }
-                },2000);
+                }, 2000);
 
             }
         });
-    
-    
-    
-    
     </script>
-    
+
 </body>
+
 </html>

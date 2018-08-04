@@ -1,12 +1,15 @@
 <template>
     <div>
-        书籍列表
+        <slide></slide>
     </div>
 </template>
 
 <script>
+    import Slide from '@/components/common/Slide'
     export default {
-
+        components: {
+            Slide
+        }
     }
 </script>
 

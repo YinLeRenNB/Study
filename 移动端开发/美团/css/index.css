@@ -56,7 +56,9 @@ input::-webkit-input-placeholder{  /* Internet Explorer 10-11 */
     color:#3efad8;
 }
 .content{
+    overflow: hidden;      /* 防止子元素塌陷 */
     background: #fff;
+    margin-bottom: 0.2rem;
 }
 .img-box{
     width: 6.4rem;
@@ -74,6 +76,9 @@ input::-webkit-input-placeholder{  /* Internet Explorer 10-11 */
     float: left;
     width: 20%;
     padding-bottom: .15rem;
+}
+.nav-img{
+    text-align: center
 }
 .food{
     color: #efb336;
@@ -111,4 +116,71 @@ input::-webkit-input-placeholder{  /* Internet Explorer 10-11 */
     font-size: .24rem;
     color: #666;
     padding-top:.05rem   
+}
+.list-text{
+    font-size: .34rem;
+    padding-bottom: .2rem;
+    color: #333;
+    padding-top: 0.15rem;
+    border-bottom: #ccc;
+}
+.list{
+    background: #fff;
+    padding-left: 0.3rem;
+    
+}
+.list-detail{
+    display: flex;
+    border-bottom: #ccc;
+    padding: 0.3rem 0;
+}
+.pro-img{
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+}
+.list-pro{
+    border-top: 1px #ccc solid;
+}
+.pro-detail{
+    padding-top: 0.2rem;
+    flex-grow: 1
+}
+.pro-detail div{
+    margin-bottom: 0.15rem;
+}
+.listmore{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px #ccc solid;
+    padding: 0.15rem 0;
+    color: #06c1ae;
+    background: #fff;
+    width: 6rem;
+    height: 0.8rem;
+    font-size: 0.3rem;
+    line-height: 0.8rem;
+}
+.footer-bar {
+    padding-left: 0.15rem;
+    font-size: .28rem;
+    margin-top: 0.3rem;
+    margin-bottom: .4rem;
+}
+.btn-weak {
+    border: .02rem solid #06c1ae;
+    padding: 0 .3rem;
+    background: 0;
+    color: #06c1ae;
+}
+.btn {
+    display: inline-block;   /* 设置宽高 */    
+    text-align: center;
+    height: .6rem;
+    border-radius: .06rem;
+    font-size: .28rem;
+    line-height: .6rem;
+    cursor: pointer;
+    box-sizing: border-box;    
 }

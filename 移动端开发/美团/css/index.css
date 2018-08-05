@@ -69,12 +69,12 @@ input::-webkit-input-placeholder{  /* Internet Explorer 10-11 */
     font-size: 0.7rem;
     text-align: center;
     margin-left: .27rem;
-    
 }
 .iconlist li{
     background: #fff;
     float: left;
     width: 20%;
+    padding-top: .2rem;
     padding-bottom: .15rem;
 }
 .nav-img{
@@ -182,5 +182,85 @@ input::-webkit-input-placeholder{  /* Internet Explorer 10-11 */
     font-size: .28rem;
     line-height: .6rem;
     cursor: pointer;
-    box-sizing: border-box;    
+    box-sizing: border-box;
+    margin-right: .2rem;    
+}
+.footer-city{
+    font-size: .28rem;
+    margin-left: .55rem;
+}
+.foot-nav a{
+    color: #06c1ae;
+    font-size: .24rem;
+    margin-right: .5rem;
+    display: inline-block;
+    float: left;       
+    width: 100%;
+    font-weight: bolder;
+    border-left: 1px #333 solid;
+}
+.foot-nav li{
+    display: inline-block;
+    text-align: center;
+    margin-top: .5rem;
+}
+.foot-nav li:nth-child(1) a{
+    border: none;
+}
+.foot-nav{
+    width: 100%;
+    text-align: center;
+}
+/* .foot-nav li::after{
+    display: block;
+    content: '';
+    width: 1px;
+    height: 0.24rem;
+    background: #333;
+} */
+.info-title,.footer-info{
+    font-size: .24rem;
+    color: #06c1ae;
+}
+.info-title{
+    color: #333;
+    margin-left: .6rem;
+    margin-top: 0.3rem;
+    
+}
+.footer-info{
+    display: inline-block;
+    font-weight: bolder;        
+}
+.info-one{
+    width: 1.2rem;
+    margin-top: 0.3rem;
+    
+}
+.info-two{
+    margin-left: 2rem;
+}
+.info-two-two{
+    margin-left: 0.4rem;
+}
+.info-three{
+    width: 2.42rem;
+    margin-left: 1.3rem;
+}
+.hr{
+    width: 6rem;
+    padding: 0.3rem 0.3rem;
+}
+.hr-text{
+    display: block;
+    color: #999;
+    font-size: .22rem;
+    text-align: center;
+}
+.icon-dian{
+    color: #999;
+    font-size: 0.7rem
+}
+.isSelected{
+    color: #06c1ae;
 }
